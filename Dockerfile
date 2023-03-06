@@ -2,7 +2,10 @@ FROM docker.io/node
 
 WORKDIR /src
 
+RUN ls /src
+
 RUN npm install --offline --ignore-scripts
 
-CMD ["node", "index.js"]
+RUN npm list
 
+CMD ["node", "index.js"]
