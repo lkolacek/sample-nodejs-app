@@ -3,7 +3,7 @@ FROM docker.io/node
 WORKDIR /src
 
 RUN ls /src
-RUN cp /src /opt && \
+RUN cp -r /src /opt && \
     cd /opt && \
     npm install --offline --ignore-scripts
 
