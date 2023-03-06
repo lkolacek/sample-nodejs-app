@@ -1,12 +1,8 @@
-FROM node:16
+FROM docker.io/node
 
 WORKDIR /src
 
-COPY . .
-
-RUN npm install --verbose
-
-EXPOSE 9000
+RUN npm install --offline --ignore-scripts
 
 CMD ["node", "index.js"]
 
