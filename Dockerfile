@@ -3,8 +3,10 @@ FROM docker.io/node
 WORKDIR /src
 
 RUN ls /src
-RUN cp -r /src /opt && \
-    cd /opt && \
+RUN mkdir /opt/sample-app
+
+RUN cp -r /src/* /opt/sample-app && \
+    cd /opt/sample-app && \
     npm install --offline --ignore-scripts
 
 RUN npm list
