@@ -1,12 +1,13 @@
-FROM node:16
+FROM docker.io/node
 
-WORKDIR /src
+RUN ls /tmp/npm/output
+RUN ls /tmp/npm/source
 
-COPY . .
+RUN mkdir /opt/sample-app
 
-RUN npm install --verbose
-
-EXPOSE 9000
+RUN cd /tmp/npm/source && \
+    npm install && \
+    npm list
 
 CMD ["node", "index.js"]
 
